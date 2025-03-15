@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "MemBlock",
+    "version": "1.0",
+    "description": "Remove YouTube ads, support PIP and background play by blocking tracking requests.",
+    "permissions": [
+      "declarativeNetRequest",
+      "declarativeNetRequestFeedback",
+      "storage"
+    ],
+    "host_permissions": [
+      "https://*.youtube.com/*",
+      "https://*.googlevideo.com/*",
+      "https://youtubei.googleapis.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.youtube.com/*"],
+        "js": ["content.js", "youtube.response.js"]
+      }
+    ],
+    "declarative_net_request": {
+      "rule_resources": [
+        {
+          "id": "ruleset_1",
+          "enabled": true,
+          "path": "rules.json"
+        }
+      ]
+    },
+    "icons": {
+      "128": "YouTube.png"
+    }
+  }
