@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube AdBlock",
+  "version": "1.0",
+  "description": "Remove YouTube ads with Dockerized proxy and WebSocket",
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "storage",
+    "proxy"
+  ],
+  "host_permissions": [
+    "https://*.youtube.com/*",
+    "https://*.googlevideo.com/*",
+    "https://youtubei.googleapis.com/*",
+    "ws://203.171.20.166:8080/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/*"],
+      "js": ["content.js", "youtube.response.js"]
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "icons": {
+    "128": "YouTube.png"
+  }
+}

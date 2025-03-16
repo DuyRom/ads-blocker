@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "priority": 1,
+      "action": { "type": "block" },
+      "condition": { "urlFilter": "*://*.youtube.com/api/stats/ads*" }
+    },
+    {
+      "id": 2,
+      "priority": 1,
+      "action": { "type": "block" },
+      "condition": { "urlFilter": "*://*.youtube.com/pagead*" }
+    },
+    {
+      "id": 3,
+      "priority": 1,
+      "action": { "type": "block" },
+      "condition": { "urlFilter": "*://*.youtube.com/ptracking*" }
+    },
+    {
+      "id": 4,
+      "priority": 1,
+      "action": { "type": "block" },
+      "condition": { "urlFilter": "*://s.youtube.com/api/stats/qoe?adcontext*" }
+    },
+    {
+      "id": 5,
+      "priority": 1,
+      "action": { "type": "block" },
+      "condition": { "urlFilter": "*://*.googlevideo.com/*&oad*" }
+    }
+  ]
